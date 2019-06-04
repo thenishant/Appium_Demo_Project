@@ -32,7 +32,7 @@ public class DriverFactory {
         /*Location of the apk inside the docker*/
         capabilities.setCapability(MobileCapabilityType.APP, "/opt/Flipkart.apk");
         try {
-            driver = new AndroidDriver(new URL("http://192.168.99.102:4723/wd/hub"), capabilities);
+            driver = new AndroidDriver(new URL("http://192.168.99.103:4723/wd/hub"), capabilities);
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }

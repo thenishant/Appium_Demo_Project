@@ -9,7 +9,7 @@ public class SearchItemTest extends BaseTest {
     }
 
     @Test
-    private void SearchItem(String itemName) {
+    private void SearchItem() {
         new LoginPage(driver).skipLogin();
     }
 }
