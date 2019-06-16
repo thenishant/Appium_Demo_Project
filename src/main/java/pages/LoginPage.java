@@ -7,13 +7,13 @@ import org.openqa.selenium.support.PageFactory;
 
 public class LoginPage extends BasePage {
 
+    @FindBy(id = "btn_skip")
+    private WebElement btnCLose;
+
     public LoginPage(AppiumDriver driver) {
         super(driver);
         PageFactory.initElements(driver, this);
     }
-
-    @FindBy(id = "btn_skip")
-    private WebElement btnCLose;
 
     public void skipLogin() {
         waitForElementsToBeVisible(btnCLose);

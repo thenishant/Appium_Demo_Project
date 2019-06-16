@@ -11,7 +11,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 public class DriverFactory {
-    public DriverFactory() throws Exception {
+    public DriverFactory() {
         setUp();
     }
 
@@ -22,17 +22,19 @@ public class DriverFactory {
         initDriver();
     }
 
-    public static void initDriver() {
+    private static void initDriver() {
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, "Android");
         capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "device");
         capabilities.setCapability(MobileCapabilityType.FULL_RESET, false);
         capabilities.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY, "com.flipkart.android.SplashActivity");
         capabilities.setCapability(AndroidMobileCapabilityType.APP_PACKAGE, "com.flipkart.android");
-        /*Location of the apk inside the docker*/
+        capabilities.setCapability(AndroidMobileCapabilityType.ANDROID_INSTALL_TIMEOUT, "180000");
+
+        /* Location of the apk inside the docker*/
         capabilities.setCapability(MobileCapabilityType.APP, "/opt/Flipkart.apk");
         try {
-            driver = new AndroidDriver(new URL("http://192.168.99.103:4723/wd/hub"), capabilities);
+            driver = new AndroidDriver(new URL("http://172.16.157.129:4723/wd/hub"), capabilities);
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }

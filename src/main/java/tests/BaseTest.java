@@ -6,7 +6,7 @@ import utils.DriverFactory;
 class BaseTest {
     AndroidDriver driver;
 
-    BaseTest() throws Exception {
+    BaseTest() {
         DriverFactory driverFactory = new DriverFactory();
         driver = driverFactory.getDriver();
     }

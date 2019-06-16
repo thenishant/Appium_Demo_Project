@@ -5,12 +5,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class BasePage {
+class BasePage {
     private WebDriverWait wait;
 
     BasePage(AppiumDriver driver) {
         wait = new WebDriverWait(driver, 30);
-
     }
 
     void waitForElementsToBeVisible(WebElement element) {
