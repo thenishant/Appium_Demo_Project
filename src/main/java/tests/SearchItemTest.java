@@ -5,11 +5,11 @@ import pages.LoginPage;
 
 public class SearchItemTest extends BaseTest {
 
-    SearchItemTest() throws Exception {
+    SearchItemTest() {
     }
 
     @Test
-    private void SearchItem() {
+    public void skipLoginTest() {
         new LoginPage(driver).skipLogin();
     }
 }

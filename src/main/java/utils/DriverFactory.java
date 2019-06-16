@@ -11,11 +11,12 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 public class DriverFactory {
+
+    private static AndroidDriver driver;
+
     public DriverFactory() {
         setUp();
     }
-
-    private static AndroidDriver driver;
 
     @BeforeClass(alwaysRun = true)
     public static void setUp() {

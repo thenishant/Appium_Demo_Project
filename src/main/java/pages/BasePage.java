@@ -12,7 +12,7 @@ class BasePage {
         wait = new WebDriverWait(driver, 30);
     }
 
-    void waitForElementsToBeVisible(WebElement element) {
+    protected void waitForElementsToBeVisible(WebElement element) {
         wait.until(ExpectedConditions.visibilityOf(element));
     }
 }
